@@ -1,0 +1,7 @@
+Preenche CNPJ PN de Pedido de Vendas 
+
+declare @cnpjpn as nvarchar (max)
+
+set @cnpjpn = (select top 1 T0.TaxId0 from CRD7 T0 INNER JOIN OCRD T1 ON T0.CardCode = T1.CardCode WHERE T1.CardCode =$[ORDR.CardCode])
+
+select @cnpjpn
